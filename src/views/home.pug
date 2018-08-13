@@ -1,0 +1,30 @@
+extends base
+
+block content
+  H1(class="govuk-heading-xl") UN Financial Sanctions Search
+
+  p.govuk-body-l
+    | A proof of concept for investigating how Elasticsearch might provide a solution for people on the financial
+    | sanctions list
+
+  form
+    .govuk-form-group
+      label(class="govuk-label", for="name") Name
+      span.govuk-hint
+        | Enter the full or partial name of a person you want to check
+      input(class="govuk-input", name="name", id="name", type="text", value=name || "")
+
+  if results
+    table.govuk-table
+      thead.govuk-table__head
+        tr.govuk-table__row
+        th.govuk-table__header Name
+        th.govuk-table__header DOB
+        th.govuk-table__header Group ID
+      tbody.govuk-table__body
+        each result in results
+          tr.govuk-table__row
+            th.govuk-table__cell #{result.full_name}
+            th.govuk-table__cell #{result.dob}
+            td.govuk-table__cell #{result.group_id}
+

@@ -1,0 +1,12 @@
+{
+	"query": {
+		"bool": {
+			"must": [
+				{ "match": {"name_6": "AL-QAHTANI" } },
+				{ "match": {"name_1": "sheikh" }},
+				{ "match": {"name_2": "farooq"}},
+				{ "wildcard": {"dob": "*1980"}}
+			]
+		}
+	}
+}

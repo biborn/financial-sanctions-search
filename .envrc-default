@@ -1,0 +1,2 @@
+export ES_HOST=localhost:9200
+export ES_LOG=trace

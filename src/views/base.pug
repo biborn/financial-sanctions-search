@@ -1,0 +1,45 @@
+doctype html
+html(lang="en", class="govuk-template")
+  head
+
+    title Financial sanctions search prototype
+
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="theme-color", content="#0b0c0c")
+
+    link(href=stylesheetUrl, media="screen", type="text/css", rel="stylesheet")
+
+
+  body(class="govuk-template__body")
+    header(class="govuk-header", role="banner", data-module="header")
+      .govuk-header__container.govuk-width-container
+
+        .govuk-header__logo
+          a(href="#", class="govuk-header__link govuk-header__link--homepage")
+            span(class="govuk-header__logotype")
+
+              include gov-header-logo.svg
+              span(class="govuk-header__logotype-text") GOV.UK
+
+        .govuk-header__content
+          a(class="govuk-header__link govuk-header__link--service-name", href="#") Companies House
+
+    .govuk-width-container
+      main.govuk-main-wrapper
+        .govuk-grid-row
+          .govuk-grid-column-full
+            block content
+
+    footer(class="govuk-footer", role="contentinfo")
+      .govuk-width-container
+        .govuk-footer__meta
+          .govuk-footer__meta-item.govuk-footer__meta-item--grow
+            include govuk-footer.svg
+            span(class="govuk-footer__licence-description") All content is available under the
+              a(class="govuk-footer__link", href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/", rel="license") Open Government Licence v3.0
+              | , except where otherwise stated
+          .govuk-footer__meta-item
+            a(class="govuk-footer__link govuk-footer__copyright-logo", href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/")
+              | &copy; Crown copyright
+
+    script(type="text/javascript", src=jsUrl)

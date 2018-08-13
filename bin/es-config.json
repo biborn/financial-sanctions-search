@@ -1,0 +1,37 @@
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+        "name_synonyms": {
+          "type": "synonym",
+          "synonyms": [
+            "mohammed, mohamed, muhammad, muhammat, mohammad, muhammad, mo"
+          ]
+        },
+        "lowercase": {
+          "type": "lowercase"
+        }
+      },
+      "analyzer": {
+        "name_analyzer": {
+          "tokenizer": "standard",
+          "type": "custom",
+          "filter": [
+            "lowercase",
+            "name_synonyms"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "entity": {
+      "properties": {
+        "full_name": {
+          "type": "text",
+          "fielddata": true
+        }
+      }
+    }
+  }
+}
